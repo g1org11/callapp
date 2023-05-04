@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>project</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="title">User Management</h1>
+        <button class="newuser_btn" id="modal_opener">New User</button>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>Mobile</th>
+          </tr>
+        </thead>
+
+        <tbody id="table_body"></tbody>
+      </table>
+    </div>
+
+    <div class="modal" id="form_modal">
+      <div class="modal_content">
+        <button class="form_modal_closer" id="form_closer_btn">X</button>
+        <form class="modal_form" id="user-signup-form" action="/save-user" method="post">
+          <input id="user_id" type="hidden" />
+          <div class="form-field">
+            <label for="name">Enter Name</label>
+            <input id="name" type="text" placeholder="Enter Name" required="" minlength="4" />
+          </div>
+
+          <div class="form-field">
+            <label for="email">Enter Email</label>
+            <input id="email" type="email" placeholder="Enter Email" required="" />
+          </div>
+          <div class="form-field">
+            <label for="gender">Enter gender</label>
+            <select id="gender" required="">
+              <option value="">Choose Gender</option>
+
+              <option value="male">Male</option>
+
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="address">Enter address:</label>
+            <label for="street">street</label>
+            <input id="street" type="text" placeholder="Enter street" required="" />
+            <label for="city">city</label><input id="city" type="text" placeholder="Enter city" />
+          </div>
+          <div class="form-field">
+            <label for="mobile_number">Enter mobile</label>
+            <input id="mobile_number" type="number" placeholder="Enter mobile" required="" />
+          </div>
+
+          <button type="submit" class="submit_btn">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
